@@ -1,0 +1,12 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+# path: ../sf2020/images/autocross_2020-07-05-11-58-07/forward_camera_filtered  # dataset root dir
+train: ../data_example/images/
+        
+val: ../data_example/images/
+
+# Classes
+nc: 2  # number of classes
+colors:
+- [0, 0, 255]
+- [255, 255, 0]
+names: ['blue cone', 'yellow cone']  # class names

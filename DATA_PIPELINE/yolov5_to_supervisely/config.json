@@ -1,0 +1,19 @@
+{
+  "name": "Convert YOLO v5 to Supervisely format",
+  "type": "app",
+  "categories": [
+    "yolov5",
+    "convert format"
+  ],
+  "description": "Transform YOLO v5 format to supervisely project",
+  "docker_image": "supervisely/base-py-sdk:6.1.45",
+  "main_script": "src/convert_yolov5_to_sly.py",
+  "task_location": "workspace_tasks",
+  "icon": "https://i.imgur.com/Zkr2Lix.png",
+  "icon_background": "#FFFFFF",
+  "isolate": true,
+  "headless": true,
+  "context_menu": {
+    "target": ["files_folder", "files_file"]
+  }
+}
