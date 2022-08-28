@@ -1,0 +1,16 @@
+data:
+  - rosbag: ros.bag
+    gtmd_file: gtmd.csv
+  - rosbag: ros.bag
+    gtmd_file: gtmd.csv
+kpi:
+  - type: dummy_kpi2
+    name: dummy_kpi_1
+    config:
+      custom_arg_1: test
+      custom_arg_2: test
+  - type: dummy_kpi
+    name: dummy_kpi_2
+    config:
+      custom_arg_1: test_2
+      custom_arg_2: test_2
