@@ -1,0 +1,28 @@
+# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
+# COCO 2017 dataset http://cocodataset.org by Microsoft
+# Example usage: python train.py --data coco.yaml
+# parent
+# ├── yolov5
+# └── datasets
+#     └── coco  ← downloads here
+
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+# path: ../datasets/amz  # dataset root dir
+# train: ../../datasets/sf2020_val/images/
+# val: ../../datasets/sf2020_val/images/
+
+# # Classes
+# nc: 4  # number of classes
+# names: ['blue cone', 'yellow cone']  # class names
+
+train: [/scratch/new_lens_data/images/train/scratch/SF2022_merge_4_classes_reorder/train/images]
+val: /scratch/new_lens_data/images/val
+test:
+
+nc: 4
+names: ['blue_cone', 'yellow_cone', 'orange_cone', 'large_orange_cone']
+
+## training command
+# python3 train.py --img 2592 --batch 2 --epochs 32 --data data/sf2022_orange_aug.yaml --weights yolov5s.pt
+
