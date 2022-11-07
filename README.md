@@ -47,9 +47,9 @@ In this project I implement pytorch version of "What Uncertainties Do We Need in
 
 ![](asset/0_batch0_epoch_80_pred.png)
 
-![](asset/0_batch0_epoch_80a_pred.png)
+![](asset/0_batch0_epoch_80a_var.png)
 
-![](asset/0_batch0_epoch_80e_pred.png)
+![](asset/0_batch0_epoch_80e_var.png)
 
 As you can see above the aleatoric is high around the cone boundary. This make sense because the boundary part is related to the measurement precision.
 
