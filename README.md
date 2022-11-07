@@ -45,11 +45,11 @@ Neural networks have enjoyed significant successes in recent years across a vari
 
 In this project I implement pytorch version of "What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?"
 
-![](asset/0_batch0_epoch_80_pred)
+![](asset/0_batch0_epoch_80_pred.png)
 
-![](asset/0_batch0_epoch_80a_pred)
+![](asset/0_batch0_epoch_80a_pred.png)
 
-![](asset/0_batch0_epoch_80e_pred)
+![](asset/0_batch0_epoch_80e_pred.png)
 
 As you can see above the aleatoric is high around the cone boundary. This make sense because the boundary part is related to the measurement precision.
 
