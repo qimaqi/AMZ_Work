@@ -3,7 +3,7 @@ This branch collect all the code development I made as perception core member in
 
 For the competition side we won in total 3 first prize and 1 third prize in static design, and 1 sencond prize in dynamic event. 
 
-![](asset/win.JPG)
+<img src="asset/win.JPG" alt="drawing" width="400"/> 
 
 
 ## Introduction
@@ -11,7 +11,7 @@ For the competition side we won in total 3 first prize and 1 third prize in stat
 For the perception module itself our goal is to detect cones and estimate their position and color. A sequential sensor-fusion based pipeline is designed for effective utilization of multi-modal data from the minimal sensor setup. In case of sensor failure, there are alternative LiDAR-only or Camera-only pipelines which are automatically activated for resilient recovery of the autonomous mission.
 Check the video [here](https://youtu.be/6RJvNTTBE6g)
 
-![](asset/pipeline_intro.png)
+<img src="asset/pipeline_intro.png" alt="drawing" width="400"/> 
 
 Basically in this page you can see all my tasks relevant to AMZ. More numerical details and code belongs to AMZ so you can check most qualitative results here.
 
@@ -34,9 +34,9 @@ Using event camera in racing car will resolve the issue of motion blur. Moreover
 Taking the advantage of [event simulator](https://github.com/uzh-rpg/rpg_esim) we can explore the possibility of using event camera for cone object detection.
 
 
-![](asset/rgb.gif)
+<img src="asset/rgb.gif" alt="drawing" width="400"/> 
+<img src="asset/Events_detection.gif" alt="drawing" width="400"/> 
 
-![](asset/Events_detection.gif)
 
 More details can be found [here](https://github.com/qimaqi/events_cone_detector)
 
@@ -82,11 +82,12 @@ KPI visualization of current frame: left tops shows the statistical result while
 #### C++ deployment in racing car
 The network is deployed using ONNX framework for efficient inference, achieving inference times less than 60ms, while detecting cones accurately up to a depth of 40m. Approx- imate depth of the cones is estimated using the height of bounding box as a proxy.
 
-![](asset/C%2B%2B_deploy.png)
+<img src="asset/C%2B%2B_deploy.png" alt="drawing" width="400"/> 
 
 
 #### Android deployment with phone
 To test further our YOLO model I also implement it with Android cellphone through JAVA. This can take image from competition directly and check whether cones can be detected smoothly. This is very important because the cones are in different shape and apperance in different competitions. Implementation like this can give us fast feedback for using different models.
 
-![](asset/phone_yolo.jpg)
-![](asset/phone_yolo_detection.jpg)
+<img src="asset/phone_yolo.jpg" alt="drawing" width="400"/> 
+<img src="asset/phone_yolo_detection.jpg" alt="drawing" width="400"/> 
+
