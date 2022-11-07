@@ -15,15 +15,15 @@ Check the video [here](https://youtu.be/6RJvNTTBE6g)
 
 Basically in this page you can see all my tasks relevant to AMZ. More numerical details and code belongs to AMZ so you can check most qualitative results here.
 
-- Interesting exploration
-    - 2D detection with event camera
-    - Bayesian neural network semnatic segmentation
-- Main package
-    - 2D cone detection
-        - Data pipeline
-        - KPI
-        - C++ deployment in racing car
-        - Andropid deployment with phone
+- **Interesting exploration**
+    - **2D detection with event camera**
+    - **Bayesian neural network semnatic segmentation**
+- **Main package**
+    - **2D cone detection**
+        - **Data pipeline**
+        - **KPI**
+        - **C++ deployment in racing car**
+        - **Andropid deployment with phone**
 
 ## Interesting exploration
 ### 2D object detection using event camera
