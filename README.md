@@ -11,6 +11,8 @@ For the competition side we won in total 3 first prize and 1 third prize in stat
 For the perception module itself our goal is to detect cones and estimate their position and color. A sequential sensor-fusion based pipeline is designed for effective utilization of multi-modal data from the minimal sensor setup. In case of sensor failure, there are alternative LiDAR-only or Camera-only pipelines which are automatically activated for resilient recovery of the autonomous mission.
 Check the video [here](https://youtu.be/6RJvNTTBE6g)
 
+<img src="asset/sensor setup.png" alt="drawing" width="400"/> 
+
 <img src="asset/pipeline_intro.png" alt="drawing" width="400"/> 
 
 Basically in this page you can see all my tasks relevant to AMZ. More numerical details and code belongs to AMZ so you can check most qualitative results here.
@@ -24,6 +26,10 @@ Basically in this page you can see all my tasks relevant to AMZ. More numerical 
         - **KPI**
         - **C++ deployment in racing car**
         - **Andropid deployment with phone**
+    - **3D sensor fusion detection**
+        - **Camera depth approximation**
+        - **Ground removal using RANSAC**
+        - **Sequential fusion**
 
 ## Interesting exploration
 ### 2D object detection using event camera
@@ -91,3 +97,28 @@ To test further our YOLO model I also implement it with Android cellphone throug
 <img src="asset/phone_yolo.jpg" alt="drawing" width="400"/> 
 <img src="asset/phone_yolo_detection.jpg" alt="drawing" width="400"/> 
 
+
+### 3D sensor fusion detection
+Above we discussed how we get 2D bounding box and color from images. However, to build map for the track we need 3D location/depth of the cone. We use sensor fusion technique and combines the advantages of camera and lidar. We project the 3D points to 2D camera image plane so that we can filter out points outside the bounding boxes and only keep the points on the cone surface. In this way, we have the accurate class and distance of the cone.
+
+#### Camera depth approximation
+The approximate depth estimation from YOLO is shown in figure below. The distance is not accurate for the long range. So we only use this distance as a proxy in case of the cone occlusion or false positive.
+
+<img src="asset/cone_approx.png" alt="drawing" width="400"/> 
+
+
+#### Ground removal using RANSAC
+As figure below shows. We filter out ground points to accelerate the downsteam tasks like points egomotion compensation. You can see that most points from lidar is from ground. We use ransac to fit a plane with fine tune parameters of iterations and threshold so we have 99.9% successful rate of choosing the inlier points for the plane fitting.
+
+<img src="asset/before_gr.png" alt="drawing" width="400"/> 
+
+<img src="asset/ground_removal.png" alt="drawing" width="400"/> 
+
+#### Sequential fusion
+As the [video](https://youtu.be/6RJvNTTBE6g) shows we fuse the results of camera and lidar in the sequentail fusion. Basically for the sensor fusion pipeline we project the processed points (ground removal and motion compensation) are projected onto the image bounding boxes. 
+
+<img src="asset/3dproject2d.png" alt="drawing" width="400"/> 
+
+## Conclusion
+
+I really learned a lot during this experience. We set the goal and achieved it in the end. I believe there are still many challenges, but AMZ will always keep going forward
